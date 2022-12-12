@@ -17,7 +17,7 @@
 	},
 
 	"include": [
-		"./src/**/*.ts"
+		"./build-ts/**/*.ts"
 	],
 
 	"exclude": [
