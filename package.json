@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Protocols for encoding and decoding CRDT data.",
   "main": "dist/index.js",
+	"exports": {
+		"./*": "./dist/*/index.js"
+	},
   "scripts": {
     "build": "protons ./protobufs/*.proto && mkdir -p dist build-ts && touch dist/cleanup build-ts/cleanup && rm -R dist/* build-ts/* && ./move-protos.sh && tsc -b && rm -R build-ts"
   },
