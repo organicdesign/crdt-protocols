@@ -2,10 +2,14 @@
   "name": "crdt-protocols",
   "version": "1.0.0",
   "description": "Protocols for encoding and decoding CRDT data.",
+  "type": "module",
   "main": "dist/index.js",
-	"exports": {
-		"./*": "./dist/*/index.js"
-	},
+  "exports": {
+    "./*": {
+      "import": "./dist/*/index.js",
+      "types": "./dist/*/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "protons ./protobufs/*.proto && mkdir -p dist build-ts && touch dist/cleanup build-ts/cleanup && rm -R dist/* build-ts/* && ./move-protos.sh && tsc -b && rm -R build-ts"
   },
