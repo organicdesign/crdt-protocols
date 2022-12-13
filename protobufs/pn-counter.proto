@@ -1,19 +1,6 @@
 syntax = "proto3";
 
-enum CounterType {
-	POSITIVE = 0;
-	NEGATIVE = 1;
-}
-
-message InstanceCount {
-	bytes id = 1;
-	CounterType type = 2;
-	optional uint32 int = 3;
-	optional float float = 4;
-	optional double double = 5;
-}
-
 message CounterData {
-	bytes pData = 1;
-	bytes nData = 2;
+	optional bytes pData = 1;
+	optional bytes nData = 2;
 }
