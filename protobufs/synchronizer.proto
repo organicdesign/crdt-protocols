@@ -3,4 +3,5 @@ syntax = "proto3";
 message CRDTSynchronizer {
 	string name = 1;
 	bytes data = 2;
+	uint32 id = 3;
 }

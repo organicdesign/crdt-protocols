@@ -3,6 +3,7 @@ import type { Codec } from 'protons-runtime';
 export interface CRDTSynchronizer {
     name: string;
     data: Uint8Array;
+    id: number;
 }
 export declare namespace CRDTSynchronizer {
     const codec: () => Codec<CRDTSynchronizer>;

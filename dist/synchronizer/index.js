@@ -20,13 +20,18 @@ export var CRDTSynchronizer;
                     w.uint32(18);
                     w.bytes(obj.data);
                 }
+                if (opts.writeDefaults === true || obj.id !== 0) {
+                    w.uint32(24);
+                    w.uint32(obj.id);
+                }
                 if (opts.lengthDelimited !== false) {
                     w.ldelim();
                 }
             }, (reader, length) => {
                 const obj = {
                     name: '',
-                    data: new Uint8Array(0)
+                    data: new Uint8Array(0),
+                    id: 0
                 };
                 const end = length == null ? reader.len : reader.pos + length;
                 while (reader.pos < end) {
@@ -37,6 +42,9 @@ export var CRDTSynchronizer;
                             break;
                         case 2:
                             obj.data = reader.bytes();
+                            break;
+                        case 3:
+                            obj.id = reader.uint32();
                             break;
                         default:
                             reader.skipType(tag & 7);
