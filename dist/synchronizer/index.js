@@ -3,10 +3,10 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable @typescript-eslint/no-unnecessary-boolean-literal-compare */
 import { encodeMessage, decodeMessage, message } from 'protons-runtime';
-export var CRDTSync;
-(function (CRDTSync) {
+export var CRDTSynchronizer;
+(function (CRDTSynchronizer) {
     let _codec;
-    CRDTSync.codec = () => {
+    CRDTSynchronizer.codec = () => {
         if (_codec == null) {
             _codec = message((obj, w, opts = {}) => {
                 if (opts.lengthDelimited !== false) {
@@ -48,10 +48,10 @@ export var CRDTSync;
         }
         return _codec;
     };
-    CRDTSync.encode = (obj) => {
-        return encodeMessage(obj, CRDTSync.codec());
+    CRDTSynchronizer.encode = (obj) => {
+        return encodeMessage(obj, CRDTSynchronizer.codec());
     };
-    CRDTSync.decode = (buf) => {
-        return decodeMessage(buf, CRDTSync.codec());
+    CRDTSynchronizer.decode = (buf) => {
+        return decodeMessage(buf, CRDTSynchronizer.codec());
     };
-})(CRDTSync || (CRDTSync = {}));
+})(CRDTSynchronizer || (CRDTSynchronizer = {}));

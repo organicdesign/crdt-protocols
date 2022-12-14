@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-message CRDTSync {
+message CRDTSynchronizer {
 	string name = 1;
 	bytes data = 2;
 }
