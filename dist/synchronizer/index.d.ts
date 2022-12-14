@@ -4,6 +4,7 @@ export interface CRDTSynchronizer {
     name: string;
     data: Uint8Array;
     id: number;
+    request?: boolean;
 }
 export declare namespace CRDTSynchronizer {
     const codec: () => Codec<CRDTSynchronizer>;

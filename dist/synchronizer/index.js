@@ -24,6 +24,10 @@ export var CRDTSynchronizer;
                     w.uint32(24);
                     w.uint32(obj.id);
                 }
+                if (obj.request != null) {
+                    w.uint32(32);
+                    w.bool(obj.request);
+                }
                 if (opts.lengthDelimited !== false) {
                     w.ldelim();
                 }
@@ -45,6 +49,9 @@ export var CRDTSynchronizer;
                             break;
                         case 3:
                             obj.id = reader.uint32();
+                            break;
+                        case 4:
+                            obj.request = reader.bool();
                             break;
                         default:
                             reader.skipType(tag & 7);
