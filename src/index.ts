@@ -17,3 +17,17 @@ export const decodeNumber = (data: ProtoNumber): number => {
 
 	return 0;
 };
+
+export const encodeUNumber = (data: number): ProtoUNumber => {
+	if (data < 0) {
+		data = 0;
+	}
+
+	return encodeNumber(data);
+};
+
+export const decodeUNumber = (data: ProtoNumber): number => {
+	const result = decodeNumber(data);
+
+	return result < 0 ? 0 : result;
+};

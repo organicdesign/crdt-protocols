@@ -12,3 +12,13 @@ export const decodeNumber = (data) => {
     }
     return 0;
 };
+export const encodeUNumber = (data) => {
+    if (data < 0) {
+        data = 0;
+    }
+    return encodeNumber(data);
+};
+export const decodeUNumber = (data) => {
+    const result = decodeNumber(data);
+    return result < 0 ? 0 : result;
+};
