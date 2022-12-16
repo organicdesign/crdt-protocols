@@ -11,7 +11,8 @@
     }
   },
   "scripts": {
-    "build": "protons ./protobufs/*.proto && mkdir -p dist build-ts && touch dist/cleanup build-ts/cleanup && rm -R dist/* build-ts/* && ./move-protos.sh && tsc -b && rm -R build-ts"
+    "build": "protons protobufs/*.proto && mkdir -p dist build-ts && touch dist/cleanup build-ts/cleanup && rm -R dist/* build-ts/* && ./move-protos.sh && tsc -b && rm -R build-ts/* && cp src/* build-ts/ && tsc -b && rm -R build-ts",
+    "lint": "eslint ./src/*"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@swc/core": "^1.3.22",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
     "protons": "^6.0.1",
     "typescript": "^4.9.4"
   },
