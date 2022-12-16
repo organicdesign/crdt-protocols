@@ -11,8 +11,12 @@
     }
   },
   "scripts": {
-    "build": "protons protobufs/*.proto && mkdir -p dist build-ts && touch dist/cleanup build-ts/cleanup && rm -R dist/* build-ts/* && ./move-protos.sh && tsc -b && rm -R build-ts/* && cp src/* build-ts/ && tsc -b && rm -R build-ts",
-    "lint": "eslint ./src/*"
+    "lint": "eslint ./src/*",
+		"build": "npm run build:prepare && npm run build:protos && npm run build:source && npm run build:clean",
+		"build:prepare": "mkdir -p dist build-ts && touch dist/cleanup build-ts/cleanup && rm -R dist/* build-ts/*",
+		"build:protos": "protons protobufs/*.proto && ./move-protos.sh && tsc -b && rm -R build-ts/*",
+		"build:source": "cp src/* build-ts/ && tsc -b && rm -R build-ts/*",
+		"build:clean": "rm -R build-ts"
   },
   "repository": {
     "type": "git",
