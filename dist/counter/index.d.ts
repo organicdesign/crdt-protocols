@@ -18,7 +18,7 @@ export declare namespace CounterData {
     const decode: (buf: Uint8Array | Uint8ArrayList) => CounterData;
 }
 export interface Number {
-    int?: bigint;
+    int?: number;
     float?: number;
     double?: number;
 }
@@ -28,7 +28,7 @@ export declare namespace Number {
     const decode: (buf: Uint8Array | Uint8ArrayList) => Number;
 }
 export interface UNumber {
-    int?: bigint;
+    int?: number;
     float?: number;
     double?: number;
 }
@@ -38,7 +38,7 @@ export declare namespace UNumber {
     const decode: (buf: Uint8Array | Uint8ArrayList) => UNumber;
 }
 export interface Any {
-    int?: bigint;
+    int?: number;
     float?: number;
     double?: number;
     string?: string;

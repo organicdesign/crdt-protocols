@@ -1,19 +1,19 @@
 syntax = "proto3";
 
 message Number {
-	optional sint64 int = 1;
+	optional sint32 int = 1;
 	optional float float = 2;
 	optional double double = 3;
 }
 
 message UNumber {
-	optional uint64 int = 1;
+	optional uint32 int = 1;
 	optional float float = 2;
 	optional double double = 3;
 }
 
 message Any {
-	optional sint64 int = 1;
+	optional sint32 int = 1;
 	optional float float = 2;
 	optional double double = 3;
 	optional string string = 4;

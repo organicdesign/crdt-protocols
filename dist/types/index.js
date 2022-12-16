@@ -14,7 +14,7 @@ export var Number;
                 }
                 if (obj.int != null) {
                     w.uint32(8);
-                    w.sint64(obj.int);
+                    w.sint32(obj.int);
                 }
                 if (obj.float != null) {
                     w.uint32(21);
@@ -34,7 +34,7 @@ export var Number;
                     const tag = reader.uint32();
                     switch (tag >>> 3) {
                         case 1:
-                            obj.int = reader.sint64();
+                            obj.int = reader.sint32();
                             break;
                         case 2:
                             obj.float = reader.float();
@@ -70,7 +70,7 @@ export var UNumber;
                 }
                 if (obj.int != null) {
                     w.uint32(8);
-                    w.uint64(obj.int);
+                    w.uint32(obj.int);
                 }
                 if (obj.float != null) {
                     w.uint32(21);
@@ -90,7 +90,7 @@ export var UNumber;
                     const tag = reader.uint32();
                     switch (tag >>> 3) {
                         case 1:
-                            obj.int = reader.uint64();
+                            obj.int = reader.uint32();
                             break;
                         case 2:
                             obj.float = reader.float();
@@ -126,7 +126,7 @@ export var Any;
                 }
                 if (obj.int != null) {
                     w.uint32(8);
-                    w.sint64(obj.int);
+                    w.sint32(obj.int);
                 }
                 if (obj.float != null) {
                     w.uint32(21);
@@ -162,7 +162,7 @@ export var Any;
                     const tag = reader.uint32();
                     switch (tag >>> 3) {
                         case 1:
-                            obj.int = reader.sint64();
+                            obj.int = reader.sint32();
                             break;
                         case 2:
                             obj.float = reader.float();
