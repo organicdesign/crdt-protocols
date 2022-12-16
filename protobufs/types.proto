@@ -19,5 +19,5 @@ message Any {
 	optional string string = 4;
 	optional bool bool = 5;
 	optional bytes bytes = 6;
-	optional bytes json = 7;
+	optional string json = 7;
 }

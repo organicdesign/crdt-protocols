@@ -150,7 +150,7 @@ export var Any;
                 }
                 if (obj.json != null) {
                     w.uint32(58);
-                    w.bytes(obj.json);
+                    w.string(obj.json);
                 }
                 if (opts.lengthDelimited !== false) {
                     w.ldelim();
@@ -180,7 +180,7 @@ export var Any;
                             obj.bytes = reader.bytes();
                             break;
                         case 7:
-                            obj.json = reader.bytes();
+                            obj.json = reader.string();
                             break;
                         default:
                             reader.skipType(tag & 7);

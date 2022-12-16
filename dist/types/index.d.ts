@@ -27,7 +27,7 @@ export interface Any {
     string?: string;
     bool?: boolean;
     bytes?: Uint8Array;
-    json?: Uint8Array;
+    json?: string;
 }
 export declare namespace Any {
     const codec: () => Codec<Any>;
