@@ -1,4 +1,4 @@
-import { Number as ProtoNumber, UNumber as ProtoUNumber, Any as ProtoAny } from "@protobuf/types";
+import { Number as ProtoNumber, UNumber as ProtoUNumber, Any as ProtoAny } from "../dist/types";
 
 export const encodeNumber = (data: number): ProtoNumber => {
 	if (Number.isInteger(data)) {
