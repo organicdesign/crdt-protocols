@@ -1,10 +1,10 @@
 syntax = "proto3";
 
+import "types.proto";
+
 message InstanceCount {
 	bytes id = 1;
-	optional uint32 int = 2;
-	optional float float = 3;
-	optional double double = 4;
+	UNumber count = 2;
 }
 
 message CounterData {
