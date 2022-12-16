@@ -4,6 +4,7 @@
   "description": "Protocols for encoding and decoding CRDT data.",
   "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     "./*": {
       "import": "./dist/*/index.js",
