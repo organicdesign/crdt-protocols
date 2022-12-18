@@ -26,7 +26,7 @@ export const encodeUNumber = (data: number): ProtoUNumber => {
 	return encodeNumber(data);
 };
 
-export const decodeUNumber = (data: ProtoNumber): number => {
+export const decodeUNumber = (data: ProtoUNumber): number => {
 	const result = decodeNumber(data);
 
 	return result < 0 ? 0 : result;
