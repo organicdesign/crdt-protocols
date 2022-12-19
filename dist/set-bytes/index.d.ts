@@ -1,9 +1,7 @@
 import type { Uint8ArrayList } from 'uint8arraylist';
 import type { Codec } from 'protons-runtime';
 export interface SetItems {
-    strings: string[];
-    ints: number[];
-    bytes: Uint8Array[];
+    values: Uint8Array[];
 }
 export declare namespace SetItems {
     const codec: () => Codec<SetItems>;
