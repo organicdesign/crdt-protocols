@@ -1,4 +1,4 @@
-type = uint32 | uint64 | float | double;
+type = uint32 | float | double;
 syntax = "proto3";
 
 message InstanceCount {
