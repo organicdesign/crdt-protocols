@@ -1,7 +1,6 @@
+type = int32 | bytes | string;
 syntax = "proto3";
 
 message SetItems {
-	repeated string strings = 1;
-	repeated int32 ints = 2;
-	repeated bytes bytes = 3;
+	repeated :type: values = 1;
 }
