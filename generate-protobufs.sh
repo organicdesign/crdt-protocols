@@ -11,7 +11,7 @@ for i in ${!FILES[*]}; do
 	FILE=${FILES[i]};
 	FILENAME=$(echo "$FILE" | grep -Po "^[^.]+");
 
-	LINE=$(head -n 1 "$TEMPLATE_DIR/$FILE" | tr -d "[:space:][=;=]\n");
+	LINE=$(head -n 1 "$TEMPLATE_DIR/$FILE" | tr -d "[:space:][=;=][=\"=][='=][=\`=]\n");
 
 	if [[ ${LINE:0:5} != $MATCH_STR ]]; then
 		echo "Skipping $TEMPLATE_DIR/$FILE";
