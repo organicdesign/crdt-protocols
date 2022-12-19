@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message InstanceCount {
+	bytes id = 1;
+	uint32 value = 2;
+}
+
+message CounterData {
+	repeated InstanceCount data = 1;
+}

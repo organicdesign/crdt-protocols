@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message SetItems {
+	repeated string values = 1;
+}
