@@ -16,11 +16,17 @@ export var InstanceCount;
                     w.uint32(10);
                     w.bytes(obj.id);
                 }
-                if (obj.count != null) {
-                    w.uint32(18);
-                    UNumber.codec().encode(obj.count, w, {
-                        writeDefaults: false
-                    });
+                if (obj.int != null) {
+                    w.uint32(16);
+                    w.uint32(obj.int);
+                }
+                if (obj.float != null) {
+                    w.uint32(29);
+                    w.float(obj.float);
+                }
+                if (obj.double != null) {
+                    w.uint32(33);
+                    w.double(obj.double);
                 }
                 if (opts.lengthDelimited !== false) {
                     w.ldelim();
@@ -37,7 +43,13 @@ export var InstanceCount;
                             obj.id = reader.bytes();
                             break;
                         case 2:
-                            obj.count = UNumber.codec().decode(reader, reader.uint32());
+                            obj.int = reader.uint32();
+                            break;
+                        case 3:
+                            obj.float = reader.float();
+                            break;
+                        case 4:
+                            obj.double = reader.double();
                             break;
                         default:
                             reader.skipType(tag & 7);

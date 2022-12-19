@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-import "types.proto";
-
 message SetItems {
-	repeated Any data = 1;
+	repeated string strings = 1;
+	repeated int32 ints = 2;
+	repeated bytes bytes = 3;
 }

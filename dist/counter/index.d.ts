@@ -2,7 +2,9 @@ import type { Uint8ArrayList } from 'uint8arraylist';
 import type { Codec } from 'protons-runtime';
 export interface InstanceCount {
     id: Uint8Array;
-    count?: UNumber;
+    int?: number;
+    float?: number;
+    double?: number;
 }
 export declare namespace InstanceCount {
     const codec: () => Codec<InstanceCount>;
